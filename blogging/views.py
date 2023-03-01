@@ -15,6 +15,7 @@ def detail_view(request, post_id):
     published = Post.objects.exclude(published_date__exact=None)
     try:
         post = published.get(pk=post_id)
+        print(post)
     except Post.DoesNotExist:
         raise Http404
     context = {'post': post}
