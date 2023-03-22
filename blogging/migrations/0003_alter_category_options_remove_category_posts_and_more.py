@@ -5,16 +5,19 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("blogging", "0002_alter_post_id_category"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name="category", options={"verbose_name_plural": "Categories"},
+            name="category",
+            options={"verbose_name_plural": "Categories"},
         ),
-        migrations.RemoveField(model_name="category", name="posts",),
+        migrations.RemoveField(
+            model_name="category",
+            name="posts",
+        ),
         migrations.AddField(
             model_name="category",
             name="post",
